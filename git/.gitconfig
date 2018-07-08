@@ -6,3 +6,6 @@
   clear = stash --keep-index --include-untracked
 
   
+[user]
+	email = r.maertz@gmail.com
+	name = Bob Maertz
