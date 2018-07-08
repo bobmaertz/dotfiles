@@ -9,3 +9,11 @@
 [user]
 	email = r.maertz@gmail.com
 	name = Bob Maertz
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[fetch]
+	prune = true
+[push]
+	default = simple
+	followTags = true
