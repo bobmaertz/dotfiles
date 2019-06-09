@@ -1,4 +1,30 @@
 # dotfiles
-Collection of useful dotfiles
+Collection of personal configurations and shortcuts. 
 
-Work in progress - Use at own risk :)
+## Installation
+Installation is relatively straightforward. After cloning repository, run the following command: 
+
+```
+> ./install.sh
+```
+
+This will create the necessary symlinks between the repo and home directory. 
+
+## Dotfiles
+
+### General 
+- .bashrc
+- .bash_aliases
+- .functions
+- .env
+- .grep
+- .inputrc
+- .profile
+
+### Vim
+- .viminfo
+
+### Git
+- .gitconfig
+- .gitignore_global
+
