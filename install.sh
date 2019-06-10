@@ -17,4 +17,5 @@ ln -sfv "$DOTFILES_DIR/bash/.inputrc" ~
 ln -sfv "$DOTFILES_DIR/bash/.profile" ~
 
 ln -sfv "$DOTFILES_DIR/bash/.viminfo" ~
+ln -sfv "$DOTFILES_DIR/bash/.vimrc" ~
 
