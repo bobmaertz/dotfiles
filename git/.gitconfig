@@ -9,11 +9,17 @@
 [user]
 	email = r.maertz@gmail.com
 	name = Bob Maertz
+	signingkey = CC42887B7981CC8B
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
+	autocrlf = false
 [fetch]
 	prune = true
 [push]
 	default = simple
 	followTags = true
+[gpg]
+	program = C:/Program Files (x86)/GnuPG/bin/gpg.exe
+[commit]
+	template = C:/Users/bob/.gitmessagevim
