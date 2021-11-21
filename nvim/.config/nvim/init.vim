@@ -120,7 +120,6 @@ let &runtimepath.=',' . expand("$HOME") . '/personal/refactoring.nvim/printfyou'
 
 " let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
 
-lua require("theprimeagen")
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 let g:vim_be_good_log_file = 1
 let g:vim_apm_log = 1
@@ -143,8 +142,6 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 
 nnoremap <silent> Q <nop>
 nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
-" Probably rename this, because its straight silly to be a worktree.
-nnoremap <leader>; :lua require("theprimeagen.git-worktree").execute(vim.loop.cwd(), "just-build")<CR>
 
 nnoremap <leader>vwh :h <C-R>=expand("<cword>")<CR><CR>
 nnoremap <leader>bs /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
