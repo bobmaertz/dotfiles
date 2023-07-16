@@ -8,7 +8,8 @@ alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias vi="nvim"
 alias vim="nvim"
 
-alias cdw="cd ~/workspace"
+alias cdw="cd ~/work"
+alias cdp="cd ~/personal"
 alias cdd="cd ~/Documents" 
 alias cdh="cd ~/.config" 
 
