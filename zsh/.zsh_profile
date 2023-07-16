@@ -12,3 +12,8 @@ alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':'
 
 alias gdoc="godoc -http=:6060"
 
+
+## Bindings 
+bindkey -s ^f "tmux-sessionizer\n"
+
+

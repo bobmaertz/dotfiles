@@ -4,7 +4,9 @@ export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/Users/bob/Library/Python
 export PATH=$HOME/.istioctl/bin:$PATH
 export GOPATH=$HOME/go
 
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+LOCAL_SCRIPTS=$HOME/.local/scripts
+
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:${LOCAL_SCRIPTS}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
