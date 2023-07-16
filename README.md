@@ -1,30 +1,14 @@
-# dotfiles
-Collection of personal configurations and shortcuts. 
+# Dotfiles
 
-## Installation
-Installation is relatively straightforward. After cloning repository, run the following command: 
+Configurations / settings for my developp:w`
+
+
+## Installation 
 
 ```
-> ./install.sh
+brew install stow 
+
+stow <packagename> -t ~
 ```
 
-This will create the necessary symlinks between the repo and home directory. 
-
-## Dotfiles
-
-### General 
-- .bashrc
-- .bash_aliases
-- .functions
-- .env
-- .grep
-- .inputrc
-- .profile
-
-### Vim
-- .viminfo
-
-### Git
-- .gitconfig
-- .gitignore_global
-
+Note: Nvim still needs a seperate installl 

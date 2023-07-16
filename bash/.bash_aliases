@@ -1,1 +1,0 @@
-alias cdw='cd ~/workspace'

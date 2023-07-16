@@ -1,0 +1,14 @@
+
+## Common aliases 
+alias s="git status"
+alias c="git commit -m"
+alias vi="nvim"
+alias vim="nvim"
+alias cdw="cd ~/workspace"
+alias k='kubectl'
+alias cdd="cd ~/Documents" 
+alias cdh="cd ~/.config" 
+alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':' -f 2 | xargs"
+
+alias gdoc="godoc -http=:6060"
+
