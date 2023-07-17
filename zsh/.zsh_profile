@@ -1,9 +1,14 @@
 
+
+export GREP_OPTIONS="--color=auto"
+
 ## Common aliases 
 alias s="git status"
 alias c="git commit -m"
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" 
 
+
+alias gup="go get -u -v ./... && go mod tidy && go mod vendor" 
 
 alias vi="nvim"
 alias vim="nvim"
