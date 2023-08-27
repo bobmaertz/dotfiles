@@ -22,7 +22,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh_profile
-source ~/.zsh_work
+[[ -f "~/.zsh_work" ]] && source ~/.zsh_work
 
 export SOPS_AGE_KEY_FILE=$HOME/.sops/key.txt
 
