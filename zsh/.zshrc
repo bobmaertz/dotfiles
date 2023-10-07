@@ -26,3 +26,4 @@ source ~/.zsh_profile
 
 export SOPS_AGE_KEY_FILE=$HOME/.sops/key.txt
 
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
