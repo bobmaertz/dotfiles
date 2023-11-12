@@ -28,5 +28,5 @@ alias cfd=". fzf_cd"
 ## Bindings 
 bindkey -s ^f "tmux-sessionizer\n"
 
-bindkey -s ^c "cfd\n"
+bindkey -s ^z ". fzf_cd\n"
 
