@@ -18,6 +18,8 @@ alias cdp="cd ~/personal"
 alias cdd="cd ~/Documents" 
 alias cdh="cd ~/.config" 
 
+alias notes="cd /Users/bob/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes"
+
 
 alias k='kubectl'
 alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':' -f 2 | xargs"
