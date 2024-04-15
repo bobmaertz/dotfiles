@@ -13,6 +13,7 @@ alias gup="go get -u -v ./... && go mod tidy && go mod vendor"
 alias vi="nvim"
 alias vim="nvim"
 
+alias tf="terraform"
 alias cdw="cd ~/work"
 alias cdp="cd ~/personal"
 alias cdd="cd ~/Documents" 

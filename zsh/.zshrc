@@ -17,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -29,3 +29,5 @@ export SOPS_AGE_KEY_FILE=$HOME/.sops/key.txt
 
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 
+# Needed for ssh to work with brew installed openssh (see: https://stackoverflow.com/questions/68573454/having-difficulty-to-get-ssh-with-a-yubikey-working-with-macos-monterey#comment128135654_69416173) 
+export PATH=$(brew --prefix openssh)/bin:$PATH
