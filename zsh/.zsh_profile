@@ -28,6 +28,12 @@ alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':'
 alias gdoc="godoc -http=:6060"
 
 alias cfd=". fzf_cd"
+
+## Bootstrapping 
+alias gcli='gonew github.com/bobmaertz/tcli' 
+
+
+
 ## Bindings 
 bindkey -s ^f "tmux-sessionizer\n"
 
