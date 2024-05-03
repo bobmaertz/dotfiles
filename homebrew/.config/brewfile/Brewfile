@@ -1,0 +1,67 @@
+# Installation dependencies and settings
+# -----------------------------------------------------------------------------
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+
+brew "mas"
+
+# Programming languages
+# -----------------------------------------------------------------------------
+brew "go"
+brew "node"
+brew "python@3.11"
+brew "lua"
+
+# CLI Tools or other end-use software
+# -----------------------------------------------------------------------------
+brew "age"
+brew "sops"
+brew "ansible", link: false
+brew "fzf"
+brew "git"
+brew "helm"
+brew "istioctl"
+brew "k3d"
+brew "kubernetes-cli"
+brew "minikube"
+brew "neovim"
+brew "parallel"
+brew "qemu"
+brew "ripgrep"
+brew "stow"
+brew "terraform"
+brew "tmux"
+brew "watch"
+brew "wget"
+cask "drawio"
+cask "vagrant"
+
+# Dependencies for programming languages and the like
+# -----------------------------------------------------------------------------
+brew "python-cryptography"
+brew "libssh"
+brew "rustup-init"
+brew "goreleaser"
+cask "anaconda"
+brew "delve"
+
+## GUI Apps 
+## -----------------------------------------------------------------------------
+cask "docker"
+cask "monodraw"
+cask "openemu"
+cask "rectangle"
+cask "qmk-toolbox"
+cask "arduino-ide"
+
+## Utilities
+## -----------------------------------------------------------------------------
+cask "rectangle"
+
+
+## Fonts
+## -----------------------------------------------------------------------------
+cask "font-hack-nerd-font"
