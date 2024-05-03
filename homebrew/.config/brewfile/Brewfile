@@ -1,9 +1,7 @@
 # Installation dependencies and settings
 # -----------------------------------------------------------------------------
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
-tap "homebrew/core"
 tap "homebrew/services"
 
 brew "mas"
@@ -41,7 +39,6 @@ cask "vagrant"
 
 # Dependencies for programming languages and the like
 # -----------------------------------------------------------------------------
-brew "python-cryptography"
 brew "libssh"
 brew "rustup-init"
 brew "goreleaser"
