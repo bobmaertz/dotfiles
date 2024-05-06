@@ -1,38 +1,39 @@
-
-
 export GREP_OPTIONS="--color=auto"
 
-## Common aliases 
+alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':' -f 2 | xargs"
+
+## Git 
 alias s="git status"
 alias c="git commit -m"
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" 
 
+alias gcg="git rev-list --all --remotes --pretty=oneline | grep"
 
+##  Go 
 alias gup="go get -u -v ./... && go mod tidy && go mod vendor" 
 
+alias gdoc="godoc -http=:6060"
+
+## Bootstrap new cli 
+alias gcli='gonew github.com/bobmaertz/tcli' 
+
+## Cmd Aliases 
 alias vi="nvim"
 alias vim="nvim"
-
 alias tf="terraform"
+alias k='kubectl'
+
+## Navigation
+alias new='tmux new -d -s ' 
+alias cfd=". fzf_cd"
+
+
 alias cdw="cd ~/work"
 alias cdp="cd ~/personal"
 alias cdd="cd ~/Documents" 
 alias cdh="cd ~/.config" 
 
 alias notes="cd /Users/bob/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Notes"
-alias gcg="git rev-list --all --remotes --pretty=oneline | grep"
-
-alias k='kubectl'
-alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':' -f 2 | xargs"
-
-alias gdoc="godoc -http=:6060"
-
-alias cfd=". fzf_cd"
-
-## Bootstrapping 
-alias gcli='gonew github.com/bobmaertz/tcli' 
-
-
 
 ## Bindings 
 bindkey -s ^f "tmux-sessionizer\n"
