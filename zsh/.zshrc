@@ -21,6 +21,8 @@ plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
+source <(fzf --zsh)
+
 source ~/.zsh_profile
 
 test -f ~/.zsh_work && source ~/.zsh_work
@@ -31,3 +33,4 @@ export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 
 # Needed for ssh to work with brew installed openssh (see: https://stackoverflow.com/questions/68573454/having-difficulty-to-get-ssh-with-a-yubikey-working-with-macos-monterey#comment128135654_69416173) 
 export PATH=$(brew --prefix openssh)/bin:$PATH
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
