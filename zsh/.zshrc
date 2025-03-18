@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 plugins=(git ssh-agent)
 
@@ -34,3 +34,4 @@ export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 # Needed for ssh to work with brew installed openssh (see: https://stackoverflow.com/questions/68573454/having-difficulty-to-get-ssh-with-a-yubikey-working-with-macos-monterey#comment128135654_69416173) 
 export PATH=$(brew --prefix openssh)/bin:$PATH
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
