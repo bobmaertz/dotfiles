@@ -1,0 +1,7 @@
+shell-integration = zsh
+font-family = JetBrains Mono
+theme = light:rose-pine-dawn,dark:rose-pine
+mouse-hide-while-typing = true
+scrollback-limit = 1000000
+window-theme = system
+
