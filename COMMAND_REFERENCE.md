@@ -50,11 +50,17 @@ A comprehensive reference of all custom commands, aliases, functions, keybinding
 |-------|---------|-------------|
 | `new` | `tmux new -d -s` | Create a new detached tmux session |
 
-### Secrets / Encryption
+### SOPS / Age
 
 | Alias | Command | Description |
 |-------|---------|-------------|
 | `age_key` | `cat $SOPS_AGE_KEY_FILE \| grep ...` | Print SOPS age public key |
+| `age_keygen` | `age-keygen -o $SOPS_AGE_KEY_FILE` | Generate a new age key to the configured path |
+| `se` | `sops --encrypt` | Encrypt a file with SOPS (stdout) |
+| `sd` | `sops --decrypt` | Decrypt a file with SOPS (stdout) |
+| `see` | `sops --encrypt --in-place` | Encrypt a file with SOPS in-place |
+| `sde` | `sops --decrypt --in-place` | Decrypt a file with SOPS in-place |
+| `sops_edit` | `sops --input-type yaml --output-type yaml` | Open a YAML file in SOPS editor |
 
 ---
 

@@ -1,6 +1,13 @@
 export GREP_OPTIONS="--color=auto"
 
+## SOPS / Age
 alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':' -f 2 | xargs"
+alias age_keygen="age-keygen -o $SOPS_AGE_KEY_FILE"
+alias se="sops --encrypt"
+alias sd="sops --decrypt"
+alias see="sops --encrypt --in-place"
+alias sde="sops --decrypt --in-place"
+alias sops_edit="sops --input-type yaml --output-type yaml"
 
 ## Git 
 alias s="git status"
