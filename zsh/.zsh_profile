@@ -26,8 +26,9 @@ alias c="git commit -m"
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" 
 
 alias gcg="git rev-list --all --remotes --pretty=oneline | grep"
+alias gap="git add -p"
 
-##  Go 
+##  Go
 alias gup="go get -u -v ./... && go mod tidy && go mod vendor" 
 
 alias gdoc="godoc -http=:6060"
@@ -40,6 +41,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias tf="terraform"
 alias k='kubectl'
+alias docs="less ~/personal/dotfiles/COMMAND_REFERENCE.md"
 
 ## Navigation
 alias new='tmux new -d -s ' 

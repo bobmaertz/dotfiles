@@ -9,7 +9,7 @@ LOCAL_BIN=$HOME/.local/bin
 
 export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/Users/bob/Library/Python/2.7/bin:$PATH
 export PATH=$HOME/.istioctl/bin:$PATH
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:${LOCAL_SCRIPTS}"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:${LOCAL_SCRIPTS}:${LOCAL_BIN}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

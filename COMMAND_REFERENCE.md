@@ -15,6 +15,7 @@ A comprehensive reference of all custom commands, aliases, functions, keybinding
 | `grep` | `rg` | `.zsh_profile` |
 | `tf` | `terraform` | `.zsh_profile` |
 | `k` | `kubectl` | `.zsh_profile` |
+| `docs` | `less ~/dotfiles/COMMAND_REFERENCE.md` | `.zsh_profile` |
 
 ### Git Shortcuts
 
@@ -24,6 +25,7 @@ A comprehensive reference of all custom commands, aliases, functions, keybinding
 | `c` | `git commit -m` | Quick commit with message |
 | `lg` | `git log --graph --pretty=...` | Pretty graph log with colors |
 | `gcg` | `git rev-list --all --remotes --pretty=oneline \| grep` | Search all git history |
+| `gap` | `git add -p` | Interactive patch/hunk staging |
 
 ### Go Development
 
