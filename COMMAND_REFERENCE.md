@@ -178,6 +178,8 @@ Set in `.zshrc`.
 | `SOPS_AGE_KEY_FILE` | `$HOME/.sops/key.txt` |
 | `GOPATH` | `$HOME/go` |
 | `LOCAL_SCRIPTS` | `$HOME/.local/scripts` |
+| `LOCAL_BIN` | `$HOME/.local/bin` |
+| `GREP_OPTIONS` | `--color=auto` |
 
 ---
 
