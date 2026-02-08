@@ -41,7 +41,7 @@ alias vi="nvim"
 alias vim="nvim"
 alias tf="terraform"
 alias k='kubectl'
-alias docs="less ~/dotfiles/COMMAND_REFERENCE.md"
+alias docs="less ~/personal/dotfiles/COMMAND_REFERENCE.md"
 
 ## Navigation
 alias new='tmux new -d -s ' 
