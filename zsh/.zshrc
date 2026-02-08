@@ -5,6 +5,7 @@ export SOPS_AGE_KEY_FILE=$HOME/.sops/key.txt
 
 export GOPATH=$HOME/go
 LOCAL_SCRIPTS=$HOME/.local/scripts
+LOCAL_BIN=$HOME/.local/bin
 
 export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/bin:/Users/bob/Library/Python/2.7/bin:$PATH
 export PATH=$HOME/.istioctl/bin:$PATH
@@ -26,7 +27,7 @@ source ~/.zsh_profile
 # Setup private or work sources 
 test -f ~/.zsh_work && source ~/.zsh_work
 
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:${LOCAL_SCRIPTS}"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin:${LOCAL_SCRIPTS}:${LOCAL_BIN}"
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 
 # Needed for ssh to work with brew installed openssh (see: https://stackoverflow.com/questions/68573454/having-difficulty-to-get-ssh-with-a-yubikey-working-with-macos-monterey#comment128135654_69416173) 
