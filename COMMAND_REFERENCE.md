@@ -50,6 +50,20 @@ A comprehensive reference of all custom commands, aliases, functions, keybinding
 |-------|---------|-------------|
 | `new` | `tmux new -d -s` | Create a new detached tmux session |
 
+### 1Password
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| `opl` | `op account list` | List signed-in accounts |
+| `ops` | `op signin` | Sign in to 1Password |
+| `opw` | `op item list --categories login` | List all login items |
+| `opg` | `op item get` | Get an item by name or ID |
+| `opc` | `op item create` | Create a new item |
+| `ope` | `op item edit` | Edit an existing item |
+| `opd` | `op item delete` | Delete an item |
+| `opp` | `op item get --fields password` | Get just the password for an item |
+| `opv` | `op vault list` | List all vaults |
+
 ### SOPS / Age
 
 | Alias | Command | Description |
