@@ -1,8 +1,26 @@
 export GREP_OPTIONS="--color=auto"
 
+## SOPS / Age
 alias age_key="cat $SOPS_AGE_KEY_FILE | grep -o 'public key:[^\"]*' | cut -d ':' -f 2 | xargs"
+alias age_keygen="age-keygen -o $SOPS_AGE_KEY_FILE"
+alias se="sops --encrypt"
+alias sd="sops --decrypt"
+alias see="sops --encrypt --in-place"
+alias sde="sops --decrypt --in-place"
+alias sops_edit="sops --input-type yaml --output-type yaml"
 
-## Git 
+## 1Password
+alias opl="op account list"
+alias ops="op signin"
+alias opw="op item list --categories login"
+alias opg="op item get"
+alias opc="op item create"
+alias ope="op item edit"
+alias opd="op item delete"
+alias opp="op item get --fields password"
+alias opv="op vault list"
+
+## Git
 alias s="git status"
 alias c="git commit -m"
 alias lg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" 
