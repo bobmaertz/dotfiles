@@ -44,8 +44,9 @@ alias k='kubectl'
 alias docs="less ~/personal/dotfiles/COMMAND_REFERENCE.md"
 
 ## Navigation
-alias new='tmux new -d -s ' 
+alias new='tmux new -d -s '
 alias cfd=". fzf_cd"
+alias ts="tmux-sessionizer"
 
 
 alias cdw="cd ~/work"
