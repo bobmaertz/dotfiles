@@ -35,8 +35,3 @@ export PATH=$(brew --prefix openssh)/bin:$PATH
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
-# Auto-attach to tmux on terminal open (if a session exists)
-# Attaches to the most recently used session; use `ts` to pick a specific one
-if [ -z "$TMUX" ] && [ -n "$(tmux ls 2>/dev/null)" ]; then
-  tmux attach
-fi

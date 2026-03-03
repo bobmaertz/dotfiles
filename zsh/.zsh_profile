@@ -36,11 +36,12 @@ alias gdoc="godoc -http=:6060"
 ## Bootstrap new cli 
 alias gcli='gonew github.com/bobmaertz/tcli' 
 
-## Cmd Aliases 
+## Cmd Aliases
 alias vi="nvim"
 alias vim="nvim"
 alias tf="terraform"
 alias k='kubectl'
+alias T="tmux"
 alias docs="less ~/personal/dotfiles/COMMAND_REFERENCE.md"
 
 ## Navigation
