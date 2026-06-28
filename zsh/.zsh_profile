@@ -65,6 +65,18 @@ alias notes="cd /Users/bob/Library/Mobile\ Documents/iCloud~md~obsidian/Document
 
 alias grep="rg" 
 
+killport() {
+    local port=$1
+    
+    if [[ -z "$port" ]]; then
+        echo "Usage: killport <port>"
+        return 1
+    fi
+    
+    echo "Killing process on port $port..."
+    lsof -ti:$port | xargs kill -9 2>/dev/null && echo "Done." || echo "No process found on port $port"
+}
+
 ############################################################################
 #                                                                          #
 #               ------- Useful Docker Aliases --------                     #
@@ -191,3 +203,6 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 bindkey -s ^z ". fzf_cd\n"
 
+ export NVM_DIR=/Users/bob/.nvm
+  [ -s /opt/homebrew/opt/nvm/nvm.sh ] && \. /opt/homebrew/opt/nvm/nvm.sh  # This loads nvm
+  [ -s /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm ] && \. /opt/homebrew/opt/nvm/etc/bash_completion.d/nvm  # This loads nvm bash_completion
