@@ -16,14 +16,14 @@ stow <packagename> -t ~
 
 ### NVIM Notes
 
+Requires Neovim 0.11+ (the config targets 0.12). The nvim config lives in
+the [init.nvim](https://github.com/bobmaertz/init.nvim) submodule and uses
+lazy.nvim, which bootstraps itself on first launch — no manual plugin
+manager install needed.
 
-
-Need to install packer before the plugins can get picked up. 
-```sh 
-
-git submodule update --init --recursive 
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```sh
+git submodule update --init --recursive
+stow nvim -t ~
+nvim   # lazy.nvim installs plugins from lazy-lock.json on first run
 ```
 
