@@ -1,6 +1,7 @@
-## Setup Variables 
+## Setup Variables
 export XDG_CONFIG_HOME=$HOME/.config
-export TERM=xterm-256color
+# NOTE: do not set TERM here. The terminal emulator and tmux set it correctly
+# (tmux uses tmux-256color); overriding it breaks true-color and terminfo inside tmux.
 export SOPS_AGE_KEY_FILE=$HOME/.sops/key.txt
 
 export GOPATH=$HOME/go
