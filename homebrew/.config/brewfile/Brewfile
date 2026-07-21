@@ -36,6 +36,7 @@ brew "terraform"
 brew "tmux"
 brew "watch"
 brew "wget"
+brew "zoxide"
 cask "drawio"
 
 # Dependencies for programming languages and the like

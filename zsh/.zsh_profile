@@ -54,6 +54,14 @@ new() {
 }
 alias cfd=". fzf_cd"
 alias ts="tmux-sessionizer"
+alias tn="tmux-session-new"
+
+# cd into a git worktree (sibling <repo>__worktrees dir; see `wt help`)
+wtc() {
+  local p
+  p=$(wt path "$@") || return
+  cd "$p"
+}
 
 
 alias cdw="cd ~/work"

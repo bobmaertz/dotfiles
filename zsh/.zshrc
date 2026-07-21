@@ -23,6 +23,9 @@ source $ZSH/oh-my-zsh.sh
 
 source <(fzf --zsh)
 
+# zoxide: tracks visited dirs; feeds tmux-session-new and provides `z`
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
+
 source ~/.zsh_profile
 
 # Setup private or work sources 

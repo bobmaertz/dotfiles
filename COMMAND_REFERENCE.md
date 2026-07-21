@@ -45,12 +45,16 @@ A comprehensive reference of all custom commands, aliases, functions, keybinding
 | `cdh` | `cd ~/.config` | Jump to config directory |
 | `notes` | `cd .../iCloud~md~obsidian/Documents/Notes` | Jump to Obsidian notes |
 | `cfd` | `. fzf_cd` | FZF-powered directory picker |
+| `z <query>` | zoxide jump | Jump to a frecent directory (zoxide) |
+| `wtc [branch]` | `cd $(wt path ...)` | cd into a git worktree (fzf picker when no branch) |
 
 ### Tmux
 
 | Alias | Command | Description |
 |-------|---------|-------------|
 | `new` | `tmux new -d -s` | Create a new detached tmux session |
+| `ts` | `tmux-sessionizer` | FZF picker over project dirs → session |
+| `tn` | `tmux-session-new` | FZF picker over recent dirs (zoxide) → session |
 
 ### 1Password
 
@@ -135,8 +139,22 @@ Located in `bin/.local/scripts/` (added to `$PATH`).
 | Script | Description |
 |--------|-------------|
 | `tmux-sessionizer` | FZF picker over `~/work`, `~/personal`, and `$SESSIONIZER_DIRS`. Creates or attaches to a tmux session named after the selected directory. |
-| `tmux-switch-session` | FZF picker over existing tmux sessions. Switches to the selected session. |
+| `tmux-switch-session` | FZF picker over existing tmux sessions, most recently used first, current session excluded — keybind + Enter jumps to the previous session. Runs in a tmux popup. |
+| `tmux-session-new` | FZF picker over recent directories (zoxide). Creates a session for the selection or switches to it if one exists. Runs in a tmux popup. |
+| `wt` | Git worktree helper. `wt add <branch> [base]`, `wt ls`, `wt rm [branch]`, `wt path [branch]`, `wt open [branch]` (opens the worktree in a tmux session via the sessionizer). |
 | `fzf_cd` | FZF picker over `~/personal`, `~/work`, `~/.config`, and `$SESSIONIZER_DIRS`. Changes directory to the selection. |
+
+### Git Worktree Convention
+
+`wt` keeps worktrees **next to** the main checkout, in a sibling `<repo>__worktrees` directory (same layout as [workmux](https://github.com/raine/workmux)):
+
+```
+~/work/myrepo                       <- main checkout
+~/work/myrepo__worktrees/user-auth  <- worktree for branch user-auth
+~/work/myrepo__worktrees/bug-fix    <- worktree for branch bug-fix
+```
+
+`wt` works from anywhere inside the repo (including from within a worktree), creates the branch on `wt add` if it doesn't exist yet, and `wt open` drops the worktree straight into a tmux session.
 
 ---
 
@@ -162,8 +180,9 @@ Prefix key is **`Ctrl+A`** (remapped from default `Ctrl+B`).
 | `Prefix + X` | Kill session |
 | `Prefix + h/j/k/l` | Navigate panes (vim-style) |
 | `Prefix + Ctrl+R` | Reload tmux config |
-| `Prefix + F` | Run `tmux-sessionizer` |
-| `Prefix + S` | Run `tmux-switch-session` |
+| `Prefix + F` | Run `tmux-sessionizer` in a new window |
+| `Prefix + S` | Session switcher popup (recency-sorted; `Prefix+S` + Enter = previous session) |
+| `Prefix + N` | New-session popup from recent directories (zoxide) |
 
 ---
 
@@ -191,7 +210,7 @@ go, node, python@3.11, lua
 
 ### CLI / Shell Utilities
 
-fzf, ripgrep, tmux, stow, jq, yq, gnu-sed, coreutils, tree, watch, wget
+fzf, ripgrep, tmux, stow, jq, yq, gnu-sed, coreutils, tree, watch, wget, zoxide
 
 ### Infrastructure & DevOps
 
