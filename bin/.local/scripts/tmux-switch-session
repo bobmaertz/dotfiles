@@ -1,14 +1,19 @@
-#!/bin/bash
-tmuxsessions=$(tmux list-sessions -F "#{session_name}")
+#!/usr/bin/env bash
+# fzf over existing tmux sessions, most recently used first.
+# The current session is excluded, so hitting the keybind and pressing
+# Enter without typing switches to the previous session.
+# (via https://raine.dev/blog/my-tmux-setup/)
 
-tmux_switch_to_session() {
-    session="$1"
-    if [[ $tmuxsessions = *"$session"* ]]; then
-        tmux switch-client -t "$session"
-    fi
-}
+current=$(tmux display-message -p '#S')
 
-choice=$(sort -rfu <<< "$tmuxsessions" \
-    | fzf-tmux \
-    | tr -d '\n')
-tmux_switch_to_session "$choice"
+# session_last_attached is empty for never-attached sessions; default it
+# to 0 so the sort field is always present
+choice=$(tmux list-sessions -F '#{?session_last_attached,#{session_last_attached},0} #{session_name}' \
+    | sort -rn \
+    | cut -d' ' -f2- \
+    | grep -Fxv "$current" \
+    | fzf --reverse --no-info --prompt='session> ') || exit 0
+
+[[ -z $choice ]] && exit 0
+
+tmux switch-client -t "$choice"

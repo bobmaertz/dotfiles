@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# fzf over recent directories (zoxide), then create a session for the
+# selection or switch to it if one already exists.
+# (via https://raine.dev/blog/my-tmux-setup/)
+#
+# Falls back to the sessionizer's find-based directory list when zoxide
+# isn't installed.
+
+if command -v zoxide >/dev/null 2>&1; then
+    selected=$(zoxide query -l | fzf --reverse --no-info --prompt='dir> ')
+else
+    selected=$(find ~/work ~/personal $SESSIONIZER_DIRS -mindepth 1 -maxdepth 1 -type d | fzf --reverse)
+fi
+
+[[ -z $selected ]] && exit 0
+
+# tmux-sessionizer already handles create-or-switch and the outside-tmux case
+exec "$(dirname "$0")/tmux-sessionizer" "$selected"

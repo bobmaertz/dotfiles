@@ -1,0 +1,106 @@
+#!/usr/bin/env bash
+# wt — git worktree helper.
+#
+# Convention: worktrees live NEXT TO the main checkout, in a sibling
+# directory named <repo>__worktrees (same layout as raine's workmux):
+#
+#   ~/work/myrepo                       <- main checkout
+#   ~/work/myrepo__worktrees/user-auth  <- worktree for branch user-auth
+#   ~/work/myrepo__worktrees/bug-fix    <- worktree for branch bug-fix
+#
+# Usage:
+#   wt add <branch> [base]   create worktree (and branch off [base] if new)
+#   wt ls                    list worktrees for this repo
+#   wt rm [branch] [-f]      remove a worktree (fzf picker when no branch)
+#   wt path [branch]         print a worktree's path (fzf picker when no branch)
+#   wt open [branch]         open a worktree in a tmux session (creates on demand)
+
+set -euo pipefail
+
+usage() {
+    sed -n '2,17p' "$0" | sed 's/^# \{0,1\}//'
+    exit 1
+}
+
+# Path of the main checkout, regardless of whether we're currently inside
+# a worktree — the first entry of `git worktree list` is always the main one.
+main_root() {
+    git worktree list --porcelain 2>/dev/null | head -1 | sed 's/^worktree //'
+}
+
+# Worktree paths under this repo's __worktrees dir
+list_worktrees() {
+    git worktree list --porcelain | awk '/^worktree /{print substr($0, 10)}' \
+        | grep -F "$wtdir/" || true
+}
+
+pick_branch() {
+    list_worktrees | sed "s|^$wtdir/||" | fzf --reverse --no-info --prompt='worktree> '
+}
+
+cmd=${1:-ls}
+[[ $# -gt 0 ]] && shift
+
+root=$(main_root)
+if [[ -z $root ]]; then
+    echo "wt: not inside a git repository" >&2
+    exit 1
+fi
+repo=$(basename "$root")
+wtdir="$(dirname "$root")/${repo}__worktrees"
+
+case $cmd in
+    add)
+        [[ $# -ge 1 ]] || usage
+        branch=$1
+        base=${2:-HEAD}
+        path="$wtdir/$branch"
+        if [[ -d $path ]]; then
+            echo "$path"
+            exit 0
+        fi
+        if git show-ref --verify --quiet "refs/heads/$branch"; then
+            git worktree add "$path" "$branch" >&2
+        else
+            git worktree add -b "$branch" "$path" "$base" >&2
+        fi
+        echo "$path"
+        ;;
+    ls)
+        git worktree list
+        ;;
+    rm)
+        force=""
+        args=()
+        for a in "$@"; do
+            [[ $a == "-f" || $a == "--force" ]] && force="--force" || args+=("$a")
+        done
+        branch=${args[0]:-$(pick_branch)}
+        [[ -z $branch ]] && exit 0
+        git worktree remove $force "$wtdir/$branch"
+        git worktree prune
+        ;;
+    path)
+        branch=${1:-$(pick_branch)}
+        [[ -z $branch ]] && exit 0
+        path="$wtdir/$branch"
+        if [[ ! -d $path ]]; then
+            echo "wt: no worktree at $path" >&2
+            exit 1
+        fi
+        echo "$path"
+        ;;
+    open)
+        branch=${1:-$(pick_branch)}
+        [[ -z $branch ]] && exit 0
+        path=$("$0" add "$branch")
+        exec tmux-sessionizer "$path"
+        ;;
+    -h|--help|help)
+        usage
+        ;;
+    *)
+        echo "wt: unknown command '$cmd'" >&2
+        usage
+        ;;
+esac
