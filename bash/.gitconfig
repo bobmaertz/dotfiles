@@ -50,6 +50,25 @@
 [pull]
 	rebase = true
 
+[merge]
+	# Show the common-ancestor version inside conflict markers
+	conflictstyle = zdiff3
+
+[rerere]
+	# Remember conflict resolutions and replay them
+	enabled = true
+
+[fetch]
+	# Delete local remote-tracking refs that no longer exist upstream
+	prune = true
+
+[diff]
+	# Dim moved lines so refactors read as moves, not add+delete
+	colorMoved = zebra
+
+[branch]
+	sort = -committerdate
+
 [commit]
 	template = ~/.gitmessage
 [push]
