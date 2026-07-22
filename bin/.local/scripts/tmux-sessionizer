@@ -3,7 +3,11 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/work ~/personal $SESSIONIZER_DIRS -mindepth 1 -maxdepth 1 -type d | fzf)
+    if command -v fd >/dev/null 2>&1; then
+        selected=$(fd --type d --max-depth 1 . ~/work ~/personal $SESSIONIZER_DIRS | fzf)
+    else
+        selected=$(find ~/work ~/personal $SESSIONIZER_DIRS -mindepth 1 -maxdepth 1 -type d | fzf)
+    fi
 fi
 
 if [[ -z $selected ]]; then

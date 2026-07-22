@@ -1,6 +1,6 @@
 # Dotfiles
 
-Configurations / settings for my developp:w`
+Configurations / settings for my development environment.
 
 
 

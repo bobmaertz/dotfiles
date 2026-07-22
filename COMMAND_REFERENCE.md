@@ -12,7 +12,6 @@ A comprehensive reference of all custom commands, aliases, functions, keybinding
 |-------|---------|--------|
 | `vi` | `nvim` | `.zsh_profile` |
 | `vim` | `nvim` | `.zsh_profile` |
-| `grep` | `rg` | `.zsh_profile` |
 | `tf` | `terraform` | `.zsh_profile` |
 | `k` | `kubectl` | `.zsh_profile` |
 | `docs` | `less ~/dotfiles/COMMAND_REFERENCE.md` | `.zsh_profile` |
@@ -179,6 +178,7 @@ Prefix key is **`Ctrl+A`** (remapped from default `Ctrl+B`).
 | `Prefix + x` | Kill pane |
 | `Prefix + X` | Kill session |
 | `Prefix + h/j/k/l` | Navigate panes (vim-style) |
+| `Prefix + Ctrl+L` | Send literal Ctrl+L (clear screen; root Ctrl+L belongs to vim-tmux-navigator) |
 | `Prefix + Ctrl+R` | Reload tmux config |
 | `Prefix + F` | Run `tmux-sessionizer` in a new window |
 | `Prefix + S` | Session switcher popup (recency-sorted; `Prefix+S` + Enter = previous session) |
@@ -193,12 +193,10 @@ Set in `.zshrc`.
 | Variable | Value |
 |----------|-------|
 | `XDG_CONFIG_HOME` | `$HOME/.config` |
-| `TERM` | `xterm-256color` |
 | `SOPS_AGE_KEY_FILE` | `$HOME/.sops/key.txt` |
 | `GOPATH` | `$HOME/go` |
 | `LOCAL_SCRIPTS` | `$HOME/.local/scripts` |
 | `LOCAL_BIN` | `$HOME/.local/bin` |
-| `GREP_OPTIONS` | `--color=auto` |
 
 ---
 
@@ -210,7 +208,7 @@ go, node, python@3.11, lua
 
 ### CLI / Shell Utilities
 
-fzf, ripgrep, tmux, stow, jq, yq, gnu-sed, coreutils, tree, watch, wget, zoxide
+fzf, ripgrep, tmux, stow, jq, yq, gnu-sed, coreutils, tree, watch, wget, zoxide, atuin, fd, bat, eza, direnv, git-delta
 
 ### Infrastructure & DevOps
 
