@@ -12,7 +12,6 @@ A comprehensive reference of all custom commands, aliases, functions, keybinding
 |-------|---------|--------|
 | `vi` | `nvim` | `.zsh_profile` |
 | `vim` | `nvim` | `.zsh_profile` |
-| `grep` | `rg` | `.zsh_profile` |
 | `tf` | `terraform` | `.zsh_profile` |
 | `k` | `kubectl` | `.zsh_profile` |
 | `docs` | `less ~/dotfiles/COMMAND_REFERENCE.md` | `.zsh_profile` |
@@ -193,12 +192,10 @@ Set in `.zshrc`.
 | Variable | Value |
 |----------|-------|
 | `XDG_CONFIG_HOME` | `$HOME/.config` |
-| `TERM` | `xterm-256color` |
 | `SOPS_AGE_KEY_FILE` | `$HOME/.sops/key.txt` |
 | `GOPATH` | `$HOME/go` |
 | `LOCAL_SCRIPTS` | `$HOME/.local/scripts` |
 | `LOCAL_BIN` | `$HOME/.local/bin` |
-| `GREP_OPTIONS` | `--color=auto` |
 
 ---
 
