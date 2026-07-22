@@ -208,7 +208,7 @@ go, node, python@3.11, lua
 
 ### CLI / Shell Utilities
 
-fzf, ripgrep, tmux, stow, jq, yq, gnu-sed, coreutils, tree, watch, wget, zoxide
+fzf, ripgrep, tmux, stow, jq, yq, gnu-sed, coreutils, tree, watch, wget, zoxide, atuin, fd, bat, eza, direnv, git-delta
 
 ### Infrastructure & DevOps
 

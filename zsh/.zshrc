@@ -29,6 +29,12 @@ command -v fzf >/dev/null && source <(fzf --zsh)
 # zoxide: tracks visited dirs; feeds tmux-session-new and provides `z`
 command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 
+# atuin: searchable synced shell history (replaces Ctrl-R)
+command -v atuin >/dev/null && eval "$(atuin init zsh)"
+
+# direnv: per-directory env vars from .envrc
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
+
 source ~/.zsh_profile
 
 # Setup private or work sources
