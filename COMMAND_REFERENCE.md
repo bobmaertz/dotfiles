@@ -178,6 +178,7 @@ Prefix key is **`Ctrl+A`** (remapped from default `Ctrl+B`).
 | `Prefix + x` | Kill pane |
 | `Prefix + X` | Kill session |
 | `Prefix + h/j/k/l` | Navigate panes (vim-style) |
+| `Prefix + Ctrl+L` | Send literal Ctrl+L (clear screen; root Ctrl+L belongs to vim-tmux-navigator) |
 | `Prefix + Ctrl+R` | Reload tmux config |
 | `Prefix + F` | Run `tmux-sessionizer` in a new window |
 | `Prefix + S` | Session switcher popup (recency-sorted; `Prefix+S` + Enter = previous session) |
